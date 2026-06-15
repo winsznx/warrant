@@ -1,0 +1,34 @@
+# Root .gitignore — applies repo-wide; per-package .gitignores add specifics.
+
+# OS / editor cruft
+.DS_Store
+*.swp
+
+# Dependencies (defensive; each package also ignores its own)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Local tooling / agent state — not part of the project
+.agent/
+.claude/
+
+# Env — NEVER commit secrets. Templates (.env.example) are committed.
+.env
+.env.*
+!.env.example
+
+# Build output (defensive)
+.next/
+dist/
+out/
+contracts/cache/
+contracts/out/
+*.tsbuildinfo
+.vercel
+
+# Product requirements doc — internal, not part of the public repo
+WARRANT_PRD.md
