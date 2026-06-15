@@ -57,3 +57,18 @@ export function explorerTx(hash: string): string {
 export function explorerAddress(address: string): string {
   return `${EXPLORER_URL}/address/${address}`;
 }
+
+/** ERC-8004 agent identity (env-overridable). */
+export const AGENT_ID = process.env.NEXT_PUBLIC_AGENT_ID ?? "9313";
+
+/** 8004scan chain slug for the active network. */
+const SCAN_8004_CHAIN = ACTIVE_CHAIN_ID === CELO_MAINNET_ID ? "celo" : "celo-alfajores";
+
+/** Deep link to THIS agent's 8004scan profile (not the generic explorer home). */
+export const SCAN_8004_AGENT_URL = `${SCAN_8004_URL}/agents/${SCAN_8004_CHAIN}/${AGENT_ID}`;
+
+/** Project links. */
+export const GITHUB_URL =
+  process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/winsznx/warrant";
+export const TWITTER_URL =
+  process.env.NEXT_PUBLIC_TWITTER_URL ?? "https://x.com/winsznx";
