@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description:
       "Lock cUSD in trustless escrow. Release it only when conditions are verified by an autonomous AI agent.",
     site: "@trywarrant",
-    creator: "@trywarrant",
+    creator: "@winsznx",
   },
   other: {
     "talentapp:project_verification":
