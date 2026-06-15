@@ -71,4 +71,4 @@ export const SCAN_8004_AGENT_URL = `${SCAN_8004_URL}/agents/${SCAN_8004_CHAIN}/$
 export const GITHUB_URL =
   process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/winsznx/warrant";
 export const TWITTER_URL =
-  process.env.NEXT_PUBLIC_TWITTER_URL ?? "https://x.com/winsznx";
+  process.env.NEXT_PUBLIC_TWITTER_URL ?? "https://x.com/trywarrant";
