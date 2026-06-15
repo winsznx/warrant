@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, Award, Cpu, Zap, DollarSign } from "lucide-react";
 import { useAllWarrants } from "@/lib/warrants";
 import { formatCusd } from "@/lib/format";
+import { SCAN_8004_AGENT_URL, AGENT_ID } from "@/lib/config";
 
 export default function LandingPage() {
   const { warrants, count } = useAllWarrants();
@@ -220,12 +221,23 @@ export default function LandingPage() {
             </li>
             <li style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <div style={{ width: "6px", height: "6px", borderRadius: "50%", background: "var(--primary-gold)", boxShadow: "0 0 8px var(--primary-gold)" }}></div>
-              <span>Attested records viewable on 8004scan ranking dashboard.</span>
+              <span>
+                Attested records viewable on{" "}
+                <a href={SCAN_8004_AGENT_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--cta-purple)" }}>
+                  8004scan (agent #{AGENT_ID})
+                </a>
+                .
+              </span>
             </li>
           </ul>
-          <Link href="/agent" className="btn btn-secondary" style={{ marginTop: "32px" }}>
-            <span>Meet the Agent</span>
-          </Link>
+          <div style={{ display: "flex", gap: "12px", marginTop: "32px", flexWrap: "wrap" }}>
+            <Link href="/agent" className="btn btn-secondary">
+              <span>Meet the Agent</span>
+            </Link>
+            <a href={SCAN_8004_AGENT_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+              <span>View on 8004scan</span>
+            </a>
+          </div>
         </div>
 
         <div className="workflow-card">
