@@ -82,9 +82,10 @@ async function lookupWarrant(text: string): Promise<string | null> {
     functionName: "getWarrantCount",
   })) as bigint;
 
+  // Warrant ids are 1-indexed (1..count).
   const id = BigInt(match[0]);
-  if (id >= count) {
-    return `Warrant #${id} doesn't exist yet — ${count} warrant(s) have been created.`;
+  if (id < 1n || id > count) {
+    return `Warrant #${id} doesn't exist — ${count} warrant(s) have been created so far.`;
   }
 
   const w = (await client.readContract({
