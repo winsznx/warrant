@@ -31,7 +31,8 @@ export const metadata: Metadata = {
     title: "Warrant — Conditional Payments on Celo",
     description:
       "Lock cUSD in trustless escrow. Release it only when conditions are verified by an autonomous AI agent.",
-    creator: "@winsznx",
+    site: "@trywarrant",
+    creator: "@trywarrant",
   },
   other: {
     "talentapp:project_verification":
