@@ -20,8 +20,11 @@ bracket_spacing = false
 celo = "${CELO_RPC_URL}"
 alfajores = "${ALFAJORES_RPC_URL}"
 
+# Etherscan V2 unified multichain API (Celoscan's standalone V1 API is deprecated).
+# CELOSCAN_API_KEY holds an Etherscan API key from https://etherscan.io/myapikey —
+# it works for every chain via the chainid the entry declares.
 [etherscan]
-celo = { key = "${CELOSCAN_API_KEY}", url = "https://api.celoscan.io/api", chain = 42220 }
-alfajores = { key = "${CELOSCAN_API_KEY}", url = "https://api-alfajores.celoscan.io/api", chain = 44787 }
+celo = { key = "${CELOSCAN_API_KEY}", url = "https://api.etherscan.io/v2/api?chainid=42220", chain = 42220 }
+alfajores = { key = "${CELOSCAN_API_KEY}", url = "https://api.etherscan.io/v2/api?chainid=44787", chain = 44787 }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
