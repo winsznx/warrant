@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.env*
+*.log
+.DS_Store
+# Exclude the macOS-generated lockfile so Railway's Linux build resolves
+# platform-correct native optional deps (lightningcss / @next/swc) via npm install.
+package-lock.json
