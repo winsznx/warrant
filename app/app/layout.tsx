@@ -5,6 +5,13 @@ import "./globals.css";
 import Header from "../components/Header";
 import { Providers } from "../components/Providers";
 import { wagmiConfig } from "../lib/wagmi";
+import {
+  GITHUB_URL,
+  TWITTER_URL,
+  SCAN_8004_AGENT_URL,
+  WARRANT_CONTRACT_ADDRESS,
+  explorerAddress,
+} from "../lib/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trywarrant.xyz"),
@@ -70,6 +77,35 @@ export default async function RootLayout({
             }}
           >
             <div className="container">
+              <div
+                style={{
+                  display: "flex",
+                  gap: "24px",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                  marginBottom: "20px",
+                }}
+              >
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="footer-link">
+                  GitHub
+                </a>
+                <a href={SCAN_8004_AGENT_URL} target="_blank" rel="noopener noreferrer" className="footer-link">
+                  ERC-8004 Agent
+                </a>
+                {WARRANT_CONTRACT_ADDRESS && (
+                  <a
+                    href={explorerAddress(WARRANT_CONTRACT_ADDRESS)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer-link"
+                  >
+                    Contract
+                  </a>
+                )}
+                <a href={TWITTER_URL} target="_blank" rel="noopener noreferrer" className="footer-link">
+                  X
+                </a>
+              </div>
               <p>© 2026 Warrant Agent. All rights reserved.</p>
               <p style={{ marginTop: "8px", fontSize: "0.775rem" }}>
                 Built on Celo for the Onchain Agents Hackathon • ERC-8004 Compliant
