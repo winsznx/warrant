@@ -104,6 +104,9 @@ async function main(): Promise<void> {
     supportedTrust: ["reputation", "crypto-economic"],
     services: [
       { name: "web", endpoint, version: "1.0.0" },
+      // A2A discovery + JSON-RPC surface; the card lives at
+      // <endpoint>/.well-known/agent-card.json (served by the app).
+      { name: "A2A", endpoint, version: "0.3.0" },
       // The agent's onchain wallet — where x402 cUSD micro-fees land (CAIP-10).
       { name: "agentWallet", endpoint: `eip155:${chainId}:${wallet.address}` },
       // OASF capability taxonomy — declares skills/domains explicitly so the
