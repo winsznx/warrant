@@ -9,7 +9,8 @@ import { ConfigNotice } from "@/components/ConfigNotice";
 import { formatCusd, truncateAddress } from "@/lib/format";
 import {
   ACTIVE_CHAIN,
-  SCAN_8004_URL,
+  SCAN_8004_AGENT_URL,
+  AGENT_ID,
   explorerAddress,
   isContractConfigured,
 } from "@/lib/config";
@@ -69,7 +70,7 @@ export default function AgentStatusPage() {
               <span>ERC-8004 Identity</span>
             </h3>
             <a
-              href={SCAN_8004_URL}
+              href={SCAN_8004_AGENT_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontSize: "0.75rem", color: "var(--cta-purple)", display: "flex", alignItems: "center", gap: "4px" }}
@@ -80,6 +81,19 @@ export default function AgentStatusPage() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", fontSize: "0.9rem" }}>
             <Row label="Agent Name" value="WarrantAgent" />
+            <Row
+              label="Agent ID"
+              value={
+                <a
+                  href={SCAN_8004_AGENT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--cta-purple)" }}
+                >
+                  #{AGENT_ID}
+                </a>
+              }
+            />
             <Row
               label="Operator Wallet"
               value={
