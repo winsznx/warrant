@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "ipfs.io" },
     ],
   },
+  // Serve the A2A agent card at the spec's well-known discovery path.
+  async rewrites() {
+    return [{ source: "/.well-known/agent-card.json", destination: "/api/a2a" }];
+  },
 };
 
 export default nextConfig;
